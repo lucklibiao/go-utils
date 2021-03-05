@@ -1,6 +1,9 @@
 package log
 
-import "sync/atomic"
+import (
+	"strconv"
+	"sync/atomic"
+)
 
 type severity int32 //定义日志级别
 
@@ -23,10 +26,14 @@ func (s *severity) get() severity{
 
 func (s *severity) set(level severity){
 	atomic.StoreInt32((*int32)(s),int32(level))
-
 }
-func (s *severity) String() string{
 
+func (s *severity) String() string{
+	return strconv.FormatInt((int64)(*s),10)
+}
+
+func (s *severity) Get() interface{}{
+	return *s
 }
 
 
