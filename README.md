@@ -1,9 +1,9 @@
 # golang utils
 #1、 log 用于写日志，代码主要是golang/glog的代码 
 用法：
-flag.Parse() //日志的目录需要通过flag来执行  
-defer log.Flush() //刷新缓存中的日志，将日志写到文件
-log.Info("this is a check01 ",time.Now())
+flag.Parse() //日志的目录需要通过flag来执行    
+defer log.Flush() //刷新缓存中的日志，将日志写到文件  
+log.Info("this is a check01 ",time.Now())  
 
 cmd 增加日志的flag标签信息，如下：
 . -log_max_size指定日志的最大值，默认为500m  
