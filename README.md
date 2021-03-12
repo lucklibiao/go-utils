@@ -1,6 +1,15 @@
 # golang
 golang utils include :
-1、 log 用于写日志，写日志包括标准输出以及指定输出到指定的日志文件中，计划完成时间3月底，采用的方式主要借鉴GOLANG提供的标准日志输出
+1、 log 用于写日志，代码主要是golang/glog的代码
+flag.Parse() //日志的目录需要通过flag来执行
+defer log.Flush()
+-log_max_size指定日志的最大值，默认为500m
+-log_max_num 指定同一类型日志存放的份数
+-log_dir 指定日志存放的目录，目录必须存在，如果不存在，会放到该系统的默认tempDir
+-logtostderr 错误日志仅仅写入到标准输出
+-alsologtostderr 错误日志不仅输出到标准输出，还输出到错误日志中
+
+
 2、
 3、
 4、
